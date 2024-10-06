@@ -4,57 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Links</title>
-    <!-- Link to Font Awesome for the icons -->
+    <title>Mohd Suhail Idrisi - Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
+            margin: 0;
         }
 
-        .social-links {
+        .profile-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        .profile-container img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 5px;
+            border: 3px solid #0073b1;
+        }
+
+        .profile-container h1 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .about-section {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            text-align: justify;
+            padding: 0 15px;
+        }
+
+        .about-section h2 {
             text-align: center;
         }
 
+        .about-section p {
+            margin: 10px 0;
+        }
+
         .social-links a {
-            margin: 0 15px;
+            margin: 0 10px;
             text-decoration: none;
-            color: #000;
-            font-size: 36px;
+            color: #333;
+            font-size: 30px;
         }
 
         .social-links a:hover {
             color: #0073b1;
-            /* Adjust hover color */
+        }
+
+        .social-links i {
+            transition: color 0.3s ease;
         }
     </style>
 </head>
 
 <body>
+    <div class="profile-container">
+        <img src="WhatsApp Image 2024-10-06 at 13.00.27_572ad11d.jpg" alt="This is the image of Mohd Suhail Idrisi"
+            title="Mohd Suhail Idrisi">
 
-    <div class="social-links">
+        <div class="about-section">
+            <h2>About Me</h2>
+            <p>Hello, I'm <strong>Mohd Suhail Idrisi</strong>, passionate about technology, software development and
+                connecting with like-minded professionals. Feel free to reach out to me on my social channels below.</p>
+        </div>
+
         <h1>Connect with me</h1>
-        <a href="https://github.com/suhailult777" target="_blank" aria-label="GitHub" title="GitHub">
-            <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://x.com/Sidrisi786" target="_blank" aria-label="Twitter/X" title="Twitter/X">
-            <i class="fa-brands fa-twitter"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/mohammad-suhail-idrisi-726889223/" target="_blank" aria-label="LinkedIn"
-            title="LinkedIn">
-            <i class="fa-brands fa-linkedin"></i>
-        </a>
-
-        <a href="mailto:suhailult123@gmail.com" target="_blank" aria-label="Email" title="Email">
-            <i class="fa-solid fa-envelope"></i>
-        </a>
+        <div class="social-links">
+            <a href="https://github.com/suhailult777" target="_blank" aria-label="GitHub" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://x.com/Sidrisi786" target="_blank" aria-label="Twitter/X" title="Twitter/X">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mohammad-suhail-idrisi-726889223/" target="_blank"
+                aria-label="LinkedIn" title="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="mailto:suhailult123@gmail.com" target="_blank" aria-label="Email" title="Email">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
     </div>
-
 </body>
 
 </html>
