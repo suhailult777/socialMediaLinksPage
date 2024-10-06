@@ -72,6 +72,50 @@
         .social-links i {
             transition: color 0.3s ease;
         }
+
+        /* Responsive styles */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .profile-container {
+                padding: 15px;
+            }
+
+            .profile-container img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .profile-container h1 {
+                font-size: 20px;
+            }
+
+            .about-section {
+                font-size: 14px;
+                padding: 0 10px;
+            }
+
+            .social-links a {
+                font-size: 24px;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            .profile-container img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .social-links {
+                gap: 15px;
+            }
+
+            .social-links a {
+                font-size: 22px;
+            }
+        }
     </style>
 </head>
 
