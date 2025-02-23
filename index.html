@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mohd Suhail Idrisi - Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* Global & layout styles */
         * {
             box-sizing: border-box;
         }
@@ -46,7 +47,7 @@
         .profile-container h1 {
             margin: 10px 0;
             font-size: 24px;
-            color: #ffffff;
+            color: #fff;
         }
 
         .about-section {
@@ -61,7 +62,7 @@
         .about-section h2 {
             text-align: center;
             margin: 10px 0;
-            color: #ffffff;
+            color: #fff;
         }
 
         .about-section p {
@@ -95,7 +96,7 @@
             font-size: var(--font-size);
             border-radius: calc(var(--font-size) * 0.5);
             border: 2px solid rgba(255, 255, 255, 0.1);
-            color: #ffffff;
+            color: #fff;
             position: relative;
             transition: border-color var(--transition);
             margin: 0;
@@ -106,7 +107,6 @@
         .animated-button>span {
             background: transparent;
             padding: calc(var(--font-size) * 0.7) calc(var(--font-size) * 1);
-            overflow: hidden;
             display: grid;
             grid-template-columns: 1fr calc((var(--font-size) * 1.75) * var(--hovered, 0));
             align-items: center;
@@ -145,7 +145,7 @@
             translate: calc((1 - var(--hovered, 0)) * (var(--font-size) * 3)) 0;
             opacity: var(--hovered, 0);
             transition: translate var(--transition) ease-in-out, opacity var(--transition) ease-in-out;
-            stroke: #ffffff;
+            stroke: #fff;
         }
 
         .animated-button:is(:focus-visible, :hover) {
@@ -162,7 +162,7 @@
 
         .social-links a {
             text-decoration: none;
-            color: #ffffff;
+            color: #fff;
             font-size: 24px;
             transition: color 0.3s ease, transform 0.3s ease;
         }
@@ -216,16 +216,16 @@
     <div class="profile-container">
         <img src="WhatsApp Image 2024-10-06 at 13.00.27_572ad11d.jpg" alt="This is the image of Mohd Suhail Idrisi"
             title="Mohd Suhail Idrisi">
-
         <div class="about-section">
             <h2>About Me</h2>
-            <p>Hello, I'm <strong>Mohd Suhail Idrisi</strong>, passionate about technology, software development and
-                connecting with like-minded professionals. Feel free to reach out to me on my social channels below.</p>
-
+            <p>
+                Hello, I'm <strong>Mohd Suhail Idrisi</strong>, passionate about technology, software development and
+                connecting with like-minded professionals. Feel free to reach out to me on my social channels below.
+            </p>
             <h2>Explore More</h2>
             <div class="button-container">
                 <div class="button-group">
-                    <button class="animated-button" onclick="window.location.href='MyProject.html'">
+                    <button class="animated-button" onclick="navigateToProjects()">
                         <span>
                             <span>MyProjects</span>
                             <span aria-hidden="true">
@@ -237,7 +237,7 @@
                             </span>
                         </span>
                     </button>
-                    <button class="animated-button" onclick="location.href='SampleResume.pdf'">
+                    <button class="animated-button" onclick="window.location.href='SampleResume.pdf'">
                         <span>
                             <span>Resume</span>
                             <span aria-hidden="true">
@@ -251,7 +251,6 @@
                     </button>
                 </div>
             </div>
-
             <h2>Check Out My Bloging website.</h2>
             <div class="button-container">
                 <button class="animated-button"
@@ -269,7 +268,6 @@
                 </button>
             </div>
         </div>
-
         <h1>Connect with me</h1>
         <div class="social-links">
             <a href="https://github.com/suhailult777" target="_blank" aria-label="GitHub" title="GitHub">
@@ -288,20 +286,10 @@
         </div>
     </div>
     <script>
-        // Find the MyProjects button
-        document.querySelector('.button-group .animated-button').addEventListener('click', function (e) {
-            e.preventDefault();
-
-            // Create and add the transition element
-            const transition = document.createElement('div');
-            transition.className = 'page-transition active';
-            document.body.appendChild(transition);
-
-            // Navigate to projects page after animation starts
-            setTimeout(() => {
-                window.location.href = 'MyProject.html';
-            }, 500);
-        });
+        function navigateToProjects() {
+            // Simple navigation without intercepting the browser's native routing for back button.
+            window.location.href = 'MyProject.html';
+        }
     </script>
 </body>
 
