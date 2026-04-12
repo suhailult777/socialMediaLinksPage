@@ -108,6 +108,11 @@ export default function CyberpunkPortfolio() {
               <span className="relative z-10">NEURAL_UPLINKS</span>
               <span className="absolute inset-0 bg-green-500 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-300" />
             </Link>
+
+            <Link href="/comms" className="border border-red-500 text-red-500 px-6 py-3 hover:bg-red-500 hover:text-black transition-all group overflow-hidden relative shadow-[0_0_15px_rgba(239,68,68,0.3)]">
+              <span className="relative z-10">DIRECT_COMMS</span>
+              <span className="absolute inset-0 bg-red-500 -translate-x-[100%] group-hover:translate-x-0 transition-transform duration-300" />
+            </Link>
           </div>
         </section>
 
