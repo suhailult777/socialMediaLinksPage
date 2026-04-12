@@ -9,7 +9,7 @@ export default function CommsPage() {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState<'idle' | 'encrypting' | 'routing' | 'delivered'>('idle');
 
-  const handleSend = () => {
+  const handleSend = (method: 'native' | 'gmail') => {
     if (!message) return;
     
     setStatus('encrypting');
@@ -22,8 +22,13 @@ export default function CommsPage() {
         
         setTimeout(() => {
           // Open email client with pre-filled subject and body
-          const mailtoURL = `mailto:suhailult123@gmail.com?subject=${encodeURIComponent(subject || 'Encrypted Transmission')}&body=${encodeURIComponent(message)}`;
-          window.location.href = mailtoURL;
+          if (method === 'gmail') {
+            const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=suhailult123@gmail.com&su=${encodeURIComponent(subject || 'Encrypted Transmission')}&body=${encodeURIComponent(message)}`;
+            window.open(gmailURL, '_blank');
+          } else {
+            const mailtoURL = `mailto:suhailult123@gmail.com?subject=${encodeURIComponent(subject || 'Encrypted Transmission')}&body=${encodeURIComponent(message)}`;
+            window.location.href = mailtoURL;
+          }
           
           setTimeout(() => {
             setStatus('idle');
@@ -93,14 +98,24 @@ export default function CommsPage() {
                 />
               </div>
 
-              <button 
-                onClick={handleSend}
-                disabled={!message}
-                className="mt-6 w-full border border-red-500 text-red-500 font-bold uppercase tracking-widest py-4 hover:bg-red-500 hover:text-black transition-all disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden"
-              >
-                <span className="relative z-10">SEND_TRANSMISSION</span>
-                <div className="absolute inset-0 bg-red-500 w-0 group-hover:w-full transition-all duration-500 ease-out" />
-              </button>
+              <div className="mt-6 flex flex-col sm:flex-row gap-3 w-full">
+                <button 
+                  onClick={() => handleSend('gmail')}
+                  disabled={!message}
+                  className="flex-1 border border-red-500 text-red-500 font-bold uppercase tracking-widest py-4 hover:bg-red-500 hover:text-black transition-all disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden text-xs sm:text-sm"
+                >
+                  <span className="relative z-10">SEND VIA GMAIL (WEB)</span>
+                  <div className="absolute inset-0 bg-red-500 w-0 group-hover:w-full transition-all duration-500 ease-out" />
+                </button>
+                <button 
+                  onClick={() => handleSend('native')}
+                  disabled={!message}
+                  className="flex-1 border border-red-500 text-red-500 font-bold uppercase tracking-widest py-4 hover:bg-red-500 hover:text-black transition-all disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden text-xs sm:text-sm"
+                >
+                  <span className="relative z-10">SEND VIA NATIVE APP</span>
+                  <div className="absolute inset-0 bg-red-500 w-0 group-hover:w-full transition-all duration-500 ease-out" />
+                </button>
+              </div>
             </motion.div>
           ) : (
             <div className="h-[400px] flex flex-col items-center justify-center text-center">
